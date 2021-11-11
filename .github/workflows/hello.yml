@@ -11,7 +11,7 @@ jobs:
       - name: Hello World
         run: echo Hello, world!
 
-        uses: dawidd6/action-send-mail@v3
+      - uses: dawidd6/action-send-mail@v3
         with:
           # Required mail server address:
           server_address: smtp.hotmail.com port
