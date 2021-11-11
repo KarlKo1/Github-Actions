@@ -1,5 +1,5 @@
 name: Send mail
-  if: always()
+  on: push
   uses: dawidd6/action-send-mail@v2
   with:
     # mail server settings
