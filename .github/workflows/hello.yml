@@ -8,15 +8,15 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+
+      - uses: actions/checkout@v2
+      - name: Hello msg
+        run: echo Hello, world!
       - name: Send mail
-        uses: ./
+        uses: dawidd6/action-send-mail@v3
         with:
-          server_address: ${{secrets.ADDRESS}}
+          server_address: smtp.gmail.com
           server_port: 465
-          subject: ${{matrix.subject}}
-          body: ${{matrix.body}}
-          html_body: ${{matrix.html_body}}
+          subject: Github Actions job result
           to: karl-august.kongo@khk.ee
           from: github-actions
