@@ -1,17 +1,13 @@
-name: Send mail
-
-on: push
-
-  uses: dawidd6/action-send-mail@v2
+- name: Send mail
+  uses: dawidd6/action-send-mail@v3
   with:
-    # mail server settings
-    server_address: smtp.gmail.com
-    server_port: 465
-    # email subject
-    subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
-    # email body as text
-    body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
-    # comma-separated string, send email to
-    to: karl-august.kongo@khk.ee
-    # from email name
-    from: John Doe
+    # Required mail server address:
+    server_address: smtp.hotmail.com port
+    # Required mail server port:
+    server_port: 587
+    # Required mail subject:
+    subject: Github Actions job result
+    # Required recipients' addresses:
+    to: karlaugustkk@hotmail.com
+    # Required sender full name (address can be skipped):
+    from: Luke Skywalker # <user@example.com>
