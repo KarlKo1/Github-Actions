@@ -15,7 +15,7 @@ jobs:
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.hotmail.com port
+          server_address: smtp.live.com port
           server_port: 587
           subject: Github Actions job result
           to: karlaugustkk@hotmail.com
