@@ -1,5 +1,7 @@
 name: Send mail
-  on: push
+
+on: push
+
   uses: dawidd6/action-send-mail@v2
   with:
     # mail server settings
