@@ -9,6 +9,6 @@ name: Send mail
     # Required mail subject:
     subject: Github Actions job result
     # Required recipients' addresses:
-    to: kongopoiss@gmail.com
+    to: karl-august.kongo@khk.ee
     # Required sender full name (address can be skipped):
     from: Luke Skywalker # <user@example.com>
