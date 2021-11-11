@@ -12,7 +12,7 @@ jobs:
         run: echo Hello, world!
 
       - name: Send mail
-          on: push
+          if: always()
           uses: dawidd6/action-send-mail@v3
           with:
             # Required mail server address:
@@ -22,7 +22,7 @@ jobs:
             # Required mail subject:
             subject: Github Actions job result
             # Required recipients' addresses:
-            to: karlaugustkk@hotmail.com
+            to: karlaugustkk@hotmail.com,doejohn@gmail.com
             # Required sender full name (address can be skipped):
             from: Luke Skywalker # <user@example.com>
 
