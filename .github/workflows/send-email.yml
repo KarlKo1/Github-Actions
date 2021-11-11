@@ -1,5 +1,4 @@
 name: Send mail
-
   if: always()
   uses: dawidd6/action-send-mail@v2
   with:
@@ -11,6 +10,6 @@ name: Send mail
     # email body as text
     body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
     # comma-separated string, send email to
-    to: karlaugustkk@hotmail.com
+    to: karl-august.kongo@khk.ee
     # from email name
     from: John Doe
