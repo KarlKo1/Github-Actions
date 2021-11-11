@@ -1,27 +1,51 @@
-name: Hello
+name: Test action
 
-on: push
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
-  build:
+  main:
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        include:
+          - subject: Plain body (attachment)
+            attachments: action.yml
+            body: |
+              first line
+              second line
+          - subject: HTML body (attachments)
+            attachments: package.json,package-lock.json
+            html_body: |
+              <!DOCTYPE html>
+              <html>
+              <body>
+              <h1>Hello</h1>
+              <p>world</p>
+              </body>
+              </html>
+          - subject: Plain body (Markdown)
+            convert_markdown: true
+            body: file://README.md
+          - subject: HTML body (Markdown)
+            convert_markdown: true
+            html_body: file://README.md
+          - subject: Multipart body (Markdown)
+            convert_markdown: true
+            body: file://README.md
+            html_body: file://README.md
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Hello World
-        run: echo Hello, world!
-
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Send mail
-          uses: dawidd6/action-send-mail@v3
-          with:
-            # Required mail server address:
-            server_address: smtp.hotmail.com port
-            # Required mail server port:
-            server_port: 587
-            # Required mail subject:
-            subject: Github Actions job result
-            # Required recipients' addresses:
-            to: karlaugustkk@hotmail.com,doejohn@gmail.com
-            # Required sender full name (address can be skipped):
-            from: Luke Skywalker # <user@example.com>
-
+        uses: ./
+        with:
+          server_address: ${{secrets.ADDRESS}}
+          server_port: 465
+          subject: ${{matrix.subject}}
+          body: ${{matrix.body}}
+          html_body: ${{matrix.html_body}}
+          to: karl-august.kongo@khk.ee
+          from: github-actions
