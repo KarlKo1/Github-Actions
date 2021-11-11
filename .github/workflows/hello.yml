@@ -2,7 +2,8 @@ name: Hello
 
 on: push
 
-runs:
+jobs:
+  runs:
     steps:
       - uses: actions/checkout@v2
 
