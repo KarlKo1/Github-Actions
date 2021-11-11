@@ -10,3 +10,16 @@ jobs:
 
       - name: Hello World
         run: echo Hello, world!
+
+        uses: dawidd6/action-send-mail@v3
+        with:
+          # Required mail server address:
+          server_address: smtp.hotmail.com port
+          # Required mail server port:
+          server_port: 587
+          # Required mail subject:
+          subject: Github Actions job result
+          # Required recipients' addresses:
+          to: karlaugustkk@hotmail.com
+          # Required sender full name (address can be skipped):
+          from: Luke Skywalker # <user@example.com>
