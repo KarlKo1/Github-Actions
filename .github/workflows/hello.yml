@@ -23,6 +23,6 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} failed!
-          html_body: file://README.dm
+          html_body: file://README.md
           to: karl-august.kongo@khk.ee
           from: github-actions
