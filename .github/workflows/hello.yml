@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Markdown links check
+      - name: Markdown links checkss
         uses: ruzickap/action-my-markdown-link-checker@v1
   run-if-failed:
     runs-on: ubuntu-latest
-    needs: [markdsown-link-check]
+    needs: [markdown-link-check]
     if: always() && (needs.markdown-link-check.result == 'failure')
     steps:
       # email
