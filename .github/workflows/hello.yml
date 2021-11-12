@@ -11,7 +11,7 @@ jobs:
         uses: ruzickap/action-my-markdown-link-checker@v1
   run-if-failed:
     runs-on: ubuntu-latest
-    needs: [markdown-link-check]
+    needs: [markdsown-link-check]
     if: always() && (needs.markdown-link-check.result == 'failure')
     steps:
       # email
