@@ -25,4 +25,4 @@ jobs:
           subject: Build job of ${{github.repository}} failed!
           body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} failed!
           to: karl-august.kongo@khk.ee
-          from: KarlKo github-actions
+          from: KarlKo1 github-actions
