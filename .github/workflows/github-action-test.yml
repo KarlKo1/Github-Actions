@@ -26,4 +26,4 @@ jobs:
           body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} failed!
           html_body: file://failed.html
           to: karl-august.kongo@khk.ee
-          from: KarlKo github-actions
+          from: KarlKo1 github-actions
