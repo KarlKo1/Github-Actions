@@ -24,6 +24,5 @@ jobs:
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Build job of ${{github.repository}} failed!
           body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} failed!
-          html_body: file://failed.html
           to: karl-august.kongo@khk.ee
           from: KarlKo1 github-actions
